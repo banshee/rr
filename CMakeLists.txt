@@ -187,9 +187,7 @@ if(${CAPNP} STREQUAL "CAPNP-NOTFOUND")
   message(FATAL_ERROR "Can't find 'capnp' command; install Capnproto packages? https://github.com/rr-debugger/rr/wiki/Building-And-Installing#tldr")
 endif()
 
-set(REQUIRED_LIBS
-  capnp
-)
+find_package(CapnProto)
 
 foreach(required_lib ${REQUIRED_LIBS})
   string(TOUPPER ${required_lib} PKG)
